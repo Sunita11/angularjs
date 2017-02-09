@@ -1,0 +1,13 @@
+<section class="flowerInfo">
+	<div class="flower cf" ng-model="flowers">
+		<a ng-href="#/details/{{prevItem}}" class="btn btn-left">&lt;</a>
+		<a ng-href="#/details/{{nextItem}}" class="btn btn-right">&gt;</a>
+		<h1 class="flowers-desc-heading"> {{flowers[whichItem].name}}</h1>
+		<div class="info">
+			<h2>{{flowers[whichItem].color}}</h2>
+			<img ng-src="images/{{flowers[whichItem].name}}_{{flowers[whichItem].color}}-tn.jpg" alte = "photo of {{flowers[whichItem].name}}">
+			<div class="desc">{{flowers[whichItem].description}}</div>
+		</div>
+	</div>
+	<a href="#/list"> &laquo; Back to Search</a>
+</section>

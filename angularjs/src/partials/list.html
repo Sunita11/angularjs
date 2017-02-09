@@ -1,0 +1,29 @@
+<section class="flower-page">
+	<div class="search">
+		<h2> Artistic Directory</h2>
+		<label class="search-label">search: </label>
+		<input  ng-model="query" placeholder="Search Flowers" autofocus>
+		<select ng-model="flowerOrder">
+			<option value="" selected="selected">Select an option</option>
+			<option value="name">Flower name</option>
+			<option value="color">Color</option>
+		</select>
+		<label class="formgroup">
+			<input type="radio" ng-model="direction" name="direction" checked>ascending
+		</label>
+		<label class="formgroup">
+			<input type="radio" ng-model="direction" name="direction" value="reverse">descending
+		</label>
+	</div>
+	<ul class="flowerlist">
+		<li class="flower  cf" ng-repeat="items in flowers | filter:query | orderBy:flowerOrder:direction">
+			<a ng-href="#/details/{{flowers.indexOf(items)}}">
+				<img ng-src="images/{{items.name + '_'+items.color}}-tn.jpg" alt="photo of {{items.name}}">
+				<div class="info">
+					<h2>{{items.name | uppercase}}</h2>
+					<h3>{{items.color}}</h3>
+				</div>
+			</a>
+		</li>
+	</ul>
+</section>
